@@ -29,6 +29,9 @@ metadata {
 		command "setScene1"
 		command "setScene2"
 		command "setScene3"	
+		command "setScene4"
+		command "setScene5"
+		command "setScene6"
             
 		attribute "scene", "String"
 		attribute "scenesList", "String"
@@ -63,6 +66,22 @@ metadata {
         		state "val", label: '${currentValue}', backgroundColor: "#ffffff", action: "setScene2" 
 		}
 		
+		standardTile("scene3", "scene3", width: 2, height: 1, decoration: "flat") {
+        		state "val", label: '${currentValue}', backgroundColor: "#ffffff", action: "setScene3" 
+		}
+		
+		standardTile("scene4", "scene4", width: 2, height: 1, decoration: "flat") {
+        		state "val", label: '${currentValue}', backgroundColor: "#ffffff", action: "setScene4" 
+		}
+		
+		standardTile("scene5", "scene5", width: 2, height: 1, decoration: "flat") {
+        		state "val", label: '${currentValue}', backgroundColor: "#ffffff", action: "setScene5" 
+		}
+		
+		standardTile("scene6", "scene6", width: 2, height: 1, decoration: "flat") {
+        		state "val", label: '${currentValue}', backgroundColor: "#ffffff", action: "setScene6" 
+		}
+
         	standardTile("scene3", "scene", width: 2, height: 1, decoration: "flat") {
         		state "val", label: '${currentValue}', backgroundColor: "#ffffff", action: "setScene3" 
         	}
@@ -92,6 +111,9 @@ metadata {
     		input name: "scene1", type: "text", title: "Favorite Scene 1", description: "Enter a Scene name", required: false
         	input name: "scene2", type: "text", title: "Favorite Scene 2", description: "Enter a Scene name", required: false
         	input name: "scene3", type: "text", title: "Favorite Scene 3", description: "Enter a Scene name", required: false    
+		input name: "scene4", type: "text", title: "Favorite Scene 4", description: "Enter a Scene name", required: false
+        	input name: "scene5", type: "text", title: "Favorite Scene 5", description: "Enter a Scene name", required: false
+        	input name: "scene6", type: "text", title: "Favorite Scene 6", description: "Enter a Scene name", required: false	
 	}
 }
 
@@ -204,6 +226,21 @@ def setScene2() {
 def setScene3() {
 	sendEvent(name: "scene3", value: "${scene3}")
 	changeScene("${scene3}")
+} 
+
+def setScene4() {
+	sendEvent(name: "scene4", value: "${scene4}")
+    	changeScene("${scene4}")
+}    
+
+def setScene5() {
+	sendEvent(name: "scene5", value: "${scene5}")
+    	changeScene("${scene5}")
+} 
+
+def setScene6() {
+	sendEvent(name: "scene6", value: "${scene6}")
+	changeScene("${scene6}")
 } 
 
 def setLevel(Integer value) {
